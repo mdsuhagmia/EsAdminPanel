@@ -2,13 +2,13 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Dashboard from "./pages/Dashboard";
 import Products from "./pages/Products";
 import AdminRoute from "./pages/AdminRoute";
-import Login from "./pages/login";
 import RootLayout from "./components/root/RootLayout";
 import Home from "./pages/Home";
 import ProductCreateForm from "./pages/ProductCreateForm";
 import ProductUpdateForm from "./pages/ProductUpdateForm";
 import { Toaster } from "react-hot-toast";
 import Users from "./pages/Users";
+import Login from "./pages/Login";
 
 const routing = createBrowserRouter(
   createRoutesFromElements(
