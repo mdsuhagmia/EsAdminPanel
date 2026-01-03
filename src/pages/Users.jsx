@@ -53,20 +53,20 @@ const Users = () => {
             {userList.length > 0 ? (
               userList.map((user) => (
                 <tr key={user._id} className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
+                  <td className="px-4 py-4">
+                    <div className="flex items-center gap-x-3">
+                      <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
                         {user.name?.charAt(0).toUpperCase()}
                       </div>
-                      <span className="font-medium text-gray-700">{user.name}</span>
+                      <span className="font-medium text-gray-700 whitespace-nowrap">{user.name}</span>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-gray-600">{user.email}</td>
-                  <td className="px-6 py-4">
+                  <td className="px-4 py-4 text-gray-600">{user.email}</td>
+                  <td className="px-4 py-4">
                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      user.isBan ? "bg-purple-100 text-purple-700" : "bg-gray-100 text-gray-700"
+                      user.isBanned ? "bg-purple-100 text-purple-700" : "bg-gray-100 text-gray-700"
                     }`}>
-                      {user.isBan ? "Banned" : "Active"}
+                      {user.isBanned ? "Banned" : "Active"}
                     </span>
                   </td>
                   <td className="px-6 py-4">
@@ -76,7 +76,7 @@ const Users = () => {
                       {user.isAdmin ? "Admin" : "User"}
                     </span>
                   </td>
-                  <td className="px-6 py-4 text-right">
+                  <td className="px-6 py-4 text-right whitespace-nowrap">
                     <button 
                       onClick={() => handleDeleteUser(user._id, user.name)}
                       className="p-2 hover:bg-red-50 rounded-full text-red-500 transition"

@@ -22,6 +22,10 @@ const Login = () => {
     } finally { setLoading(false); }
   };
 
+  const handleForgotPassword = ()=>{
+    navigate("/login/forgotpassword")
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
@@ -44,6 +48,9 @@ const Login = () => {
             onChange={handleChange}
             className="w-full border px-3 py-2 rounded"
           />
+          <div className="pb-4">
+            <span className="text-red-500 underline cursor-pointer" onClick={handleForgotPassword}>Forgot password</span>
+          </div>
           <button
             type="submit"
             className="w-full bg-blue-600 text-white py-2 rounded"

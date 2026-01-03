@@ -4,7 +4,6 @@ import { ApiData } from "../components/context/ContextApi";
 const Dashboard = () => {
 
   let users = useContext(ApiData)
-  console.log(users)
 
   return (
     <div>

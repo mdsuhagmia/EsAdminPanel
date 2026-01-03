@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Container from './Container'
 import logofull from '../assets/logofull.png'
 import { Link } from 'react-router-dom'
@@ -27,15 +27,6 @@ const Menu = () => {
       setLoading(false);
     }
   }
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleManualRefresh();
-      console.log("Auto-refreshing token...");
-    }, 4 * 60 * 1000); 
-    return () => clearInterval(interval);
-  }, []);
-
 
   return (
     <nav className="py-2">

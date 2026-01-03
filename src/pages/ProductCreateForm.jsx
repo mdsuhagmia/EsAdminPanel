@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const ProductCreateForm = () => {
 
@@ -53,10 +54,10 @@ const ProductCreateForm = () => {
           headers: { "Content-Type": "multipart/form-data" },
         }
       );
-      alert("Product Created Successfully!");
+      toast.success("Product Created Successfully!");
       console.log(response.data);
     } catch (err) {
-      console.error(err.response?.data?.message || "Something went wrong");
+      toast.error(err.response?.data?.message || "Something went wrong");
     } finally {
       setLoading(false);
     }

@@ -9,11 +9,18 @@ import ProductUpdateForm from "./pages/ProductUpdateForm";
 import { Toaster } from "react-hot-toast";
 import Users from "./pages/Users";
 import Login from "./pages/Login";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
+import Orders from "./pages/Orders";
+import Settings from "./pages/Settings";
+import axios from "axios";
 
 const routing = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/login" element={<Login />} />
+      <Route path="/login/forgotpassword" element={<ForgotPassword />} />
+      <Route path="/reset-password/:token" element={<ResetPassword />} />
       <Route path="/" element={<AdminRoute><RootLayout /></AdminRoute>}>
         <Route path="/" element={<Home/>}>
           <Route index element={<Dashboard />} />
@@ -21,11 +28,15 @@ const routing = createBrowserRouter(
           <Route path="/createproduct" element={<ProductCreateForm />} />
           <Route path="/updateproduct/:slug" element={<ProductUpdateForm />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/settings" element={<Settings />} />
         </Route>
       </Route>
     </>
   )
 );
+
+axios.defaults.withCredentials = true;
 
 function App() { 
   return (

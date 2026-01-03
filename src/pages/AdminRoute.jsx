@@ -21,7 +21,12 @@ const AdminRoute = ({ children }) => {
     checkAuth();
   }, []);
 
-  if (loading) return <p className="text-blue-500 font-bold font-open flex justify-center items-center h-screen text-2xl">Loading...</p>;
+  if (loading) return <div className="text-center py-10">
+                  <div className="flex justify-center items-center h-screen gap-2">
+                    <div className="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin flex items-center"></div>
+                    <span>Loading products...</span>
+                  </div>
+                </div>
   if (!isAuth) return <Navigate to="/login" replace />;
   return children;
 };
