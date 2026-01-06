@@ -81,12 +81,20 @@ const Products = () => {
     <div>
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-semibold">Products ({products.length})</h1>
-        <button
-          onClick={() => navigate("/createproduct")}
-          className="bg-blue-600 cursor-pointer text-white px-5 py-2 rounded-lg hover:bg-blue-700 shadow-md transition"
-        >
-          + Add Product
-        </button>
+        <div className="flex items-center gap-x-4">
+          <button
+            onClick={() => navigate("/createBanner")}
+            className="bg-blue-600 cursor-pointer text-white px-5 py-2 rounded-lg hover:bg-blue-700 shadow-md transition"
+          >
+            + Add Banner
+          </button>
+          <button
+            onClick={() => navigate("/createproduct")}
+            className="bg-blue-600 cursor-pointer text-white px-5 py-2 rounded-lg hover:bg-blue-700 shadow-md transition"
+          >
+            + Add Product
+          </button>
+        </div>
       </div>
 
       <div className="mb-4 relative w-full md:w-1/3">

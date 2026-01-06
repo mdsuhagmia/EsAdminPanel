@@ -14,6 +14,7 @@ import ResetPassword from "./pages/ResetPassword";
 import Orders from "./pages/Orders";
 import Settings from "./pages/Settings";
 import axios from "axios";
+import AdminBanner from "./components/AdminBanner";
 
 const routing = createBrowserRouter(
   createRoutesFromElements(
@@ -26,6 +27,7 @@ const routing = createBrowserRouter(
           <Route index element={<Dashboard />} />
           <Route path="products" element={<Products />} />
           <Route path="/createproduct" element={<ProductCreateForm />} />
+          <Route path="/createBanner" element={<AdminBanner />} />
           <Route path="/updateproduct/:slug" element={<ProductUpdateForm />} />
           <Route path="/users" element={<Users />} />
           <Route path="/orders" element={<Orders />} />
